@@ -58,8 +58,8 @@ public class UserServiceImpl implements com.service.UserService {
 		
 		vo.setModifydate(new Date());
 		
-		if(StringUtils.isNotBlank(vo.getPassword())){
-			vo.setPassword(passwordEncoder.encodePassword(vo.getPassword()));
+		if(StringUtils.isNotBlank(vo.getNewpassword())){
+			vo.setNewpassword(passwordEncoder.encodePassword(vo.getNewpassword()));
 		}
 		
 		userDao.edit(vo);
