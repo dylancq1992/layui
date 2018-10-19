@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.RoleDao">
+
+	<insert id="add" parameterType="com.bean.BaseRole"
+		useGeneratedKeys="true" keyProperty="roleid">
+		insert into
+		role(
+		code,name,description,
+		validity,createdate,creator)
+		values(#{code},#{name},#{description},
+		#{validity},#{createdate},#{creator})
+	</insert>
+	
+	
+	<update id="edit" parameterType="com.bean.BaseRole">
+	update role set name=#{name},description=#{description},modifydate=#{modifydate},modifier=#{modifier}  where roleid=#{roleid}
+	</update>
+	
+	
+</mapper>
+ 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.NoticeDao">
+
+	<insert id="addNotice" parameterType="com.vo.NoticeVO"
+		useGeneratedKeys="true" keyProperty="noticeid">
+		insert into
+		notice(
+		title,
+		content,
+		validity,
+		status,
+		createdate,
+		creator )
+		values(
+		#{title},
+		#{content},
+		'1',
+		'0',
+		sysdate(),
+		#{creator}
+	)
+	</insert>
+	
+	<insert id="addNoticeAddress" parameterType="java.util.List"
+		useGeneratedKeys="true" >
+		insert into
+		notice_address(
+		noticeid,
+		addressid,
+		addresstype)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+		(
+		#{item.noticeid},
+		#{item.addressid},
+		#{item.addresstype}
+		)
+		</foreach>
+	</insert>
+	
+
+</mapper>
+ 

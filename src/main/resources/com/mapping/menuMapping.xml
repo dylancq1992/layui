@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.MenuDao">
+
+	<insert id="add" parameterType="com.bean.BaseMenu"
+		useGeneratedKeys="true" keyProperty="menuid">
+		insert into
+		menu_resource(parentmenuid,code,name,description,url,priority,status,removed,menutype,allowcustom,icon,levels)
+		values(#{parentmenuid},#{code},#{name},#{description},#{url},#{priority},#{status},#{removed},#{menutype},#{allowcustom},#{icon},#{levels})
+	</insert>
+
+
+	<delete id="remove" parameterType="com.bean.BaseMenu">
+		update  menu_resource set removed='1' where menuid=#{menuid}
+	</delete>
+	
+	<insert id="edit" parameterType="com.bean.BaseMenu" >
+		update menu_resource set code=#{code},name=#{name},description=#{description},url=#{url},priority=#{priority},menutype=#{menutype},
+		icon=#{icon} where menuid=#{menuid}
+	</insert>
+
+</mapper>
+ 

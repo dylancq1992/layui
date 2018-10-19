@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.PermissionDao">
+
+	<delete id="deleteByRoleid" parameterType="com.vo.PermissionVO">
+		delete from role_menu
+		where roleid=#{roleid}
+	</delete>
+	
+	<delete id="deleteByUserid" parameterType="com.vo.PermissionVO">
+		delete from user_menu
+		where userid=#{userid}
+	</delete>
+
+	<insert id="addNewRoleMenu" parameterType="java.util.List"
+		useGeneratedKeys="true">
+		insert into role_menu (roleid,menuid,createdate,creator,isleaf)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.roleid},#{item.menuid},#{item.createdate},#{item.creator},#{item.isleaf})
+		</foreach>
+	</insert>
+	
+	<insert id="addNewUserMenu" parameterType="java.util.List"
+		useGeneratedKeys="true">
+		insert into user_menu (userid,menuid,createdate,creator,isleaf)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.userid},#{item.menuid},sysdate(),#{item.creator},#{item.isleaf})
+		</foreach>
+	</insert>
+
+	<insert id="role_user_save" parameterType="java.util.List"
+		useGeneratedKeys="true">
+		insert into role_user (roleid,userid,createdate,creator)
+		values
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.roleid},#{item.userid},#{item.createdate},#{item.creator})
+		</foreach>
+	</insert>
+
+</mapper>
+ 

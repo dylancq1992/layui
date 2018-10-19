@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.LoginLogsDao">
+
+	<insert id="saveLogs" parameterType="com.bean.BaseLoginLogs"
+		useGeneratedKeys="true" keyProperty="logid">
+		insert into
+		login_logs(
+		userid,
+		loginname,
+		sessionid,
+		login_time,
+		ip_address,
+		mac_address,
+		area,
+		operating_system,
+		browser,
+		user_status,
+		error_info
+		)
+		values(#{userid},
+		#{loginname},
+		#{sessionid},
+		#{login_time},
+		#{ip_address},
+		#{mac_address},
+		#{area},
+		#{operating_system},
+		#{browser},
+		#{user_status},
+		#{error_info})
+	</insert>
+
+
+
+
+</mapper>
+ 

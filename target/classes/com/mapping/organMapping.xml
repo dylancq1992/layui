@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.OrganDao">
+
+	<insert id="add" parameterType="com.bean.BaseOrgan"
+		useGeneratedKeys="true" keyProperty="organid">
+		insert into
+		organ(
+		code,name,description,grade,districtc_code,parentorganid,organ_type,
+		validity,createdate,creator,levels)
+		values(#{code},#{name},#{description},#{grade},#{districtc_code},#{parentorganid},#{organ_type},
+		#{validity},#{createdate},#{creator},#{levels})
+	</insert>
+	
+	
+	<update id="edit" parameterType="com.vo.OrganVO">
+		update organ set name=#{name},grade=#{grade},districtc_code=#{districtc_code},description=#{description},
+		modifydate=#{modifydate},modifier=#{modifier}
+		where organid=#{organid}
+	</update>
+	
+	
+</mapper>
+ 

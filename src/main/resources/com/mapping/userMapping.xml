@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.UserDao">
+
+	<insert id="add" parameterType="com.bean.BaseUser"
+		useGeneratedKeys="true" keyProperty="userid">
+		insert into
+		user(
+		loginname,
+		password,
+		user_type,
+		name,
+		sex,
+		telephone,
+		address,
+		mobile_phone,
+		fax,
+		email,
+		qq,
+		status,
+		organid,
+		bindip,
+		validity,createdate,creator)
+		values(#{loginname},
+		#{password},
+		#{user_type},
+		#{name},
+		#{sex},
+		#{telephone},
+		#{address},
+		#{mobile_phone},
+		#{fax},
+		#{email},
+		#{qq},
+		#{status},
+		#{organid},
+		#{bindip},
+		#{validity},#{createdate},#{creator})
+	</insert>
+	
+	
+	<update id="edit" parameterType="com.vo.UserVO">
+		update user set	
+		
+		<if test="newpassword != null and newpassword != '' ">
+           password=#{newpassword},
+        </if>
+        
+		name=#{name},
+		sex=#{sex},
+		telephone=#{telephone},
+		address=#{address},
+		mobile_phone=#{mobile_phone},
+		fax=#{fax},
+		email=#{email},
+		qq=#{qq},
+		organid=#{organid},
+		bindip=#{bindip},
+		modifydate=#{modifydate},
+		modifier=#{modifier}
+		 where userid=#{userid}
+	</update>
+
+</mapper>
+ 

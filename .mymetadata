@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="layui"
+  id="myeclipse.1531876969761"
+  context-root="/layui"
+  j2ee-spec="1.7"
+  archive="layui.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
