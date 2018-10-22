@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : dev
-Source Server Version : 50614
-Source Host           : localhost:3306
+Source Server         : 阿里云-myself
+Source Server Version : 50723
+Source Host           : 47.107.37.47:3306
 Source Database       : maven
 
 Target Server Type    : MYSQL
-Target Server Version : 50614
+Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-10-22 14:19:24
+Date: 2018-10-22 14:42:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `menu_resource` (
   `icon` varchar(50) DEFAULT NULL,
   `levels` varchar(255) DEFAULT NULL COMMENT '树的层级',
   PRIMARY KEY (`menuid`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu_resource
@@ -50,7 +50,7 @@ INSERT INTO `menu_resource` VALUES ('28', '25', '12110000', '用户管理', '', 
 INSERT INTO `menu_resource` VALUES ('30', '25', '12120000', '角色管理', '', 'role/role_main', '2', '1', '0', '1', null, null, '4');
 INSERT INTO `menu_resource` VALUES ('31', '25', '12130000', '组织管理', '', 'organ/organ_main', '3', '1', '0', '1', null, null, '4');
 INSERT INTO `menu_resource` VALUES ('32', '26', '12210000', '菜单管理', '', 'menu/menu_main', '1', '1', '0', '1', null, null, '4');
-INSERT INTO `menu_resource` VALUES ('33', '27', '12310000', '用户权限管理', '', '', '1', '1', '0', '1', null, null, '4');
+INSERT INTO `menu_resource` VALUES ('33', '27', '12310000', '用户权限管理', '', 'permission/user_menu_main', '1', '1', '0', '1', null, '', '4');
 INSERT INTO `menu_resource` VALUES ('34', '27', '12320000', '角色权限管理', '', 'permission/role_menu_main', '2', '1', '0', '1', null, null, '4');
 INSERT INTO `menu_resource` VALUES ('35', '27', '12330000', '用户角色管理', '', 'permission/role_user_main', '3', '1', '0', '1', null, null, '4');
 INSERT INTO `menu_resource` VALUES ('36', '2', '11100000', '我的买家库', '', '', '1', '1', '0', '1', null, '&#xe6f5;', '3');
@@ -58,3 +58,5 @@ INSERT INTO `menu_resource` VALUES ('37', '2', '11200000', '产品管理', '', '
 INSERT INTO `menu_resource` VALUES ('38', '37', '11210000', '我的产品', '', '', '1', '1', '0', '1', null, '', '4');
 INSERT INTO `menu_resource` VALUES ('39', '38', '11220000', '产品发布', '', '', '2', '1', '1', '1', null, '', '5');
 INSERT INTO `menu_resource` VALUES ('40', '37', '11220000', '产品发布', '', '', '2', '1', '0', '1', null, '', '4');
+INSERT INTO `menu_resource` VALUES ('41', '4', '13100000', '通知公告管理', '', '', '1', '1', '0', '1', null, '&#xe6e9;', '3');
+INSERT INTO `menu_resource` VALUES ('42', '41', '13110000', '通知公告', '', 'notice/notice_main', '1', '1', '0', '1', null, '', '4');
