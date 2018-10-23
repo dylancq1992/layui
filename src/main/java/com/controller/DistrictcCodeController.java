@@ -23,7 +23,7 @@ public class DistrictcCodeController {
 	@ResponseBody
 	public List<DistrictcCodeVO> getAllDistrictcCodeList(){
 		
-		List<DistrictcCodeVO> list=districtcCodeService.getAllDistrictcCodeList();
+		List<DistrictcCodeVO> list = districtcCodeService.getAllDistrictcCodeList();
 		
 		return list;
 		
